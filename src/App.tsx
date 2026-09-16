@@ -62,7 +62,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const [signinForm, setSigninForm] = useState({ email: '', password: '' });
-  const [signupForm, setSignupForm] = useState({ fullName: '', agency: '', email: '', password: '', role: 'agency_admin' as Role });
+  const [signupForm, setSignupForm] = useState({ fullName: '', agency: '', email: '', password: '' });
   const [orderForm, setOrderForm] = useState({ title: '', details: '', deadline: '' });
   const [attemptForm, setAttemptForm] = useState({ orderId: '', notes: '', gpsLat: '', gpsLng: '', physicalDescription: '', timelineNote: '', evidenceUrl: '' });
   const [statusForm, setStatusForm] = useState({ orderId: '', status: 'assigned' });
@@ -303,11 +303,6 @@ function App() {
               <input placeholder="Agency / Firm" value={signupForm.agency} onChange={(event) => setSignupForm((value) => ({ ...value, agency: event.target.value }))} />
               <input placeholder="Email" type="email" value={signupForm.email} onChange={(event) => setSignupForm((value) => ({ ...value, email: event.target.value }))} required />
               <input placeholder="Password" type="password" value={signupForm.password} onChange={(event) => setSignupForm((value) => ({ ...value, password: event.target.value }))} required />
-              <select value={signupForm.role} onChange={(event) => setSignupForm((value) => ({ ...value, role: event.target.value as Role }))}>
-                <option value="agency_admin">Agency owner / dispatcher</option>
-                <option value="process_server">Process server</option>
-                <option value="client">Client / law firm</option>
-              </select>
               <button disabled={loading} type="submit">Create trial account</button>
             </form>
           )}

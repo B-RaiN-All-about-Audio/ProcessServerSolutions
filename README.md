@@ -77,7 +77,7 @@ Use password `Passw0rd!` for all:
 ---
 
 ## API overview (MVP)
-- `POST /api/auth/signup`
+- `POST /api/auth/signup` (self-service client signup)
 - `POST /api/auth/signin`
 - `POST /api/auth/signout`
 - `GET /api/auth/session`

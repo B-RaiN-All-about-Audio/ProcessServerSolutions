@@ -1,0 +1,16 @@
+# Copy this file to .dev.vars for local development.
+# Never commit real keys/secrets.
+
+# Required for session signing fallback and app integrity settings.
+SESSION_SECRET="replace-with-long-random-string"
+
+# Optional integrations (stubs are active when unset)
+RESEND_API_KEY=""
+RESEND_FROM_EMAIL="notifications@example.com"
+STRIPE_SECRET_KEY=""
+STRIPE_WEBHOOK_SECRET=""
+
+# Web push (for browser subscription + future delivery worker)
+VAPID_PUBLIC_KEY=""
+VAPID_PRIVATE_KEY=""
+VAPID_SUBJECT="mailto:admin@example.com"

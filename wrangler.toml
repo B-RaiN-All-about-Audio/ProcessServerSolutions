@@ -1,0 +1,13 @@
+name = "processserver-solutions"
+compatibility_date = "2026-09-16"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "processserver-solutions-db"
+database_id = "replace-with-your-d1-database-id"
+
+[[r2_buckets]]
+binding = "EVIDENCE_BUCKET"
+bucket_name = "processserver-evidence"
+preview_bucket_name = "processserver-evidence-preview"

@@ -236,15 +236,12 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   }
 
   if (request.method === 'POST' && path === '/api/auth/signup') {
-    const body = await parseBody<{ fullName?: string; agency?: string; email?: string; password?: string; role?: Role }>(request);
+    const body = await parseBody<{ fullName?: string; agency?: string; email?: string; password?: string }>(request);
     if (!body?.fullName || !body.email || !body.password) {
       return json({ error: 'fullName, email, and password are required' }, 400);
     }
 
-    const normalizedRole: Role = body.role ?? 'agency_admin';
-    if (!['process_server', 'client', 'agency_admin'].includes(normalizedRole)) {
-      return json({ error: 'Invalid role' }, 400);
-    }
+    const normalizedRole: Role = 'client';
 
     const existing = await env.DB.prepare('SELECT id FROM users WHERE email = ?').bind(body.email.toLowerCase()).first();
     if (existing) {
